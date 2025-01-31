@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Poppins,monospace;
+}
+body{
+    width: 100%;
+    height: 100vh;
+    background: #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 35px;
+}
+.container{
+    width: 500px;
+    height: 350px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 10px 14px 10px rgba(0,0,0,0.2);
+    position: relative;
+    overflow: hidden;
+}
+button{
+    padding: 8px 20px;
+    background: rgb(185, 65, 221);
+    color: white;
+    font-size: 14px;
+    border-radius: 4px;
+    transition: all ease-in 0.2s;
+    cursor: pointer;
+    outline: none;
+    border: none;
+}
+button:active{
+    background:blueviolet;
+    color: white;
+    scale: 0.9;
+}
+button:disabled{
+    background: rgb(38, 0, 255);
+    color: white;
+    border: 2px solid rgb(20, 43, 220);
+}
+.container .loader{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.37);
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+.container .loader .box{
+    width: 40px;
+    height: 40px;
+    background: white;
+    border-radius: 4px;
+    transition: all ease-in 0.35s;
+    animation: rotate linear infinite 1s;
+    rotate: 45deg;
+}
+@keyframes rotate{
+    0%{
+        box-shadow: inset 10px 0px 0px rgba(0,0,0,0.77); 
+    }
+    50%{
+        box-shadow: inset 50px 0px 0px rgba(0,0,0,0.77);
+    }
+    100%{
+        box-shadow: inset -50px 0px 0px rgba(0,0,0,0.77);
+    }
+
+}
+.container .icon-part{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(226, 34, 226, 0.32);
+    display: grid;
+    place-content: center;
+}
+.container .icon-part i{
+    font-size: 4.5em;
+    transition: all ease in 0.4s;
+    color: yellow;
+    rotate: 40deg;
+    animation: shake linear infinite 0.5s;
+}
+@keyframes shake{
+    0%{
+        transform: rotate(35deg); 
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}
+.container .two-part{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+.container .two-part .white,
+.container .two-part .black{
+    width: 100%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.05em;
+    font-weight: 600;
+    padding: 0px 50px;
+}
+.container .two-part .black{
+    background: rgb(84, 49, 210);
+    color: white;
+}
+.container .single{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:rgba(186, 41, 186, 0.675);
+    color: white;
+    font-size: 1.02em;
+    font-weight: 600;
+    padding: 0px 15px;
+    display: none;
+}
